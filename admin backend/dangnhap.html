@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Đăng nhập</title>
+ <link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+</head>
+<style>
+
+	html, body { 
+ margin: 0; 
+ padding: 0; 
+ font-family: 'Helvetica', 'Arial'; /* fonts */
+ background-image: url("bgweb.jpg");
+ background-attachment: fixed;
+ background-position: right top;
+x
+
+}
+.header-login{
+	font-size: 45px;
+	color: blue;
+	text-align: left;
+	font-family: "Arial", serif;
+	font-weight: bold;
+	
+	
+}
+#dangnhap2 {
+	list-style-type: none;
+	text-decoration: none;
+	color:black;
+	font-size: 20px;
+	font-family: "Arial", serif;
+	font-weight: bold;
+	
+}
+#dangnhap2 li { 
+ display: inline; /* make items horizontal */
+}
+#dangnhap2 li a:link, #dangnhap2 li a:visited, #dangnhap2 li a:active { 
+ text-decoration: none; /* remove underline */ 
+ color: #000000; 
+ margin: 0; 
+}
+#dangnhap2 li a:link.last-link { 
+ /* remove divider */ 
+ border-right: 0px;
+}
+#dangnhap2 li a:hover { 
+ /* change color on hover (mouseover) */ 
+ color: blue;
+}
+.submitinput{
+ margin: 10px 0px 0px;
+ text-align: center;
+ text-decoration: none;
+}
+	
+</style>
+<body id="body-login">
+	<article>
+	<div id="body-flex-login">
+		<dir id="container-login">
+			<dir id="container-login-left">
+				<dir class="header-login">
+					<span">WELCOME TO IT NEWS</span><br/>
+					
+				</dir>
+			</dir >
+			<dir id="container-login-right">
+				<dir id="header-login-right">
+					<span  id="dangnhap2">
+						<li><a href="dangky.html">Đăng ký</a></span>/<span class="actived" id="dangky2">Đăng nhập</span></li>
+				</dir>
+				
+					
+				<dir id="dangnhap1-longin"><br/>
+						<p style="margin: 0px"><span class="glyphicon glyphicon-user"></span> Tên đăng nhập</p>
+						<input id="email" name="email"class="texinputemail" onblur="checkemail()" type="text" placeholder="Email"/>
+						<span id="checkusermail" style="color: red"></span>
+						<br/>
+						<p style="margin: 0px"><span class="glyphicon glyphicon-lock"></span> Mật khẩu</p>
+						<input id="matkhau" name="matkhau"class="texinputpass" onblur="checkpass()" type="password" placeholder="password"/>
+						<span id="checkuserpass" style="color: red"></span>
+						<br/>
+						<input id="btndangnhap" class="submitinput" onclick="btnchecklongin()" type="submit" value="Đăng Nhập"/>
+						<br/><br/>
+							<span id="ketqua"	style="color: red;" ></span>
+				</dir>
+	
+				<dir >
+				</dir>
+			</dir>
+		
+		</dir>
+	</div>
+	</article>
+	<footer>
+		<div style="background: black;  position: fixed;
+ right: 0; left: 0;
+  bottom: 0;">
+		<div style="width: 25%; float:left;background: black;">
+		
+		<ul class="" style="list-style-type: none;">
+			<li style="color: white; margin-top: 15px">THÔNG TIN</li>
+			<li><a style="text-decoration: none; color: darkgray;" href="#">Giới thiệu</a></li>
+			<li><a style="text-decoration: none;color: darkgray;" href="#">Chính sách
+					bảo mật</a></li>
+		</ul>
+	</div>
+	<div style="width: 25%; float: right;background: black;">
+		<ul class="" style="list-style-type: none;">
+			<li style="color: white; margin-top: 15px">LIÊN KẾT</li>
+			<li><a style="text-decoration: none; color: darkgray;" href="#">FB: </a></li>
+			<li><a style="text-decoration: none; color: darkgray;" href="#">Email:</a></li>
+		</ul>
+	</div>
+	<div style="width: 25%; float: right;background: black;">
+		<ul class="" style="list-style-type: none;">
+			<li style="color: white;margin-top: 15px ">ĐỊA CHỈ</li>
+			<li><a style="text-decoration: none;color: darkgray;" href="#">Địa chỉ1: Hà Nội </a></li>
+			<li><a style="text-decoration: none;color: darkgray;" href="#">Địa chỉ2: Vĩnh Phúc </a></li>
+		</ul>
+	</div>
+	<div style="width: 25%; float: right;background: black;">
+		<ul class="" style="list-style-type: none;">
+		<li style="color: white; margin-top: 15px ;">LIÊN HỆ</li>
+			<li><a style="text-decoration: none;color: darkgray;" href="#"><span class="glyphicon glyphicon-earphone"></span> 0352428800</a></li>
+			<li><a style="text-decoration: none;color: darkgray;" href="#"> <span class="glyphicon glyphicon-envelope"></span> doanngan2108@gmail.com</a></li>
+		</ul>
+	</div>
+</div>
+	</footer>
+	<script type="text/javascript">
+	function checkemail() {
+	var email = document.getElementById("email").value;
+	if (document.getElementById("email").value==""){ //không có khoảng trắng 
+	 
+		document.getElementById("checkusermail").innerHTML="* Tên đăng nhập không được để trống !";
+	 }else {
+		 document.getElementById("checkusermail").innerHTML="";
+		 document.getElementById("ketqua").innerHTML="";
+	 }
+};
+
+function checkpass() {
+	var pass =document.getElementById("matkhau").value;
+	if(pass ==""){
+	 document.getElementById("checkuserpass").innerHTML="* Password không được để trống !";
+	}else {
+		document.getElementById("checkuserpass").innerHTML="";
+	}
+	
+};
+function btnchecklongin(){
+	if(document.getElementById("email").value==""){
+		 document.getElementById("checkusermail").innerHTML="*email không được để trống !";
+		 return;
+	}
+	if(document.getElementById("matkhau").value==""){
+		 document.getElementById("checkuserpass").innerHTML="*mật khẩu không được để trống !";
+		 return;
+	}
+	var user="ngandoan98@gmail.com";
+	var pass="12345";
+	if(document.getElementById("email").value=="ngandoan98@gmail.com" && document.getElementById("matkhau").value=="12345"){
+		alert("đăng nhập thành công");
+	}else{
+		alert("đăng nhập thất bại");
+	}
+	
+};
+
+
+</script>
+</body>
+
+</html>
