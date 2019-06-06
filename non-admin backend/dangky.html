@@ -1,0 +1,263 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Đăng kí</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<style>
+html, body { 
+ margin: 0; 
+ padding: 0; 
+ font-family: 'Helvetica', 'Arial'; /* fonts */
+ background-image: url("img/bgweb.jpg");
+ background-attachment: fixed;
+ background-position: right top;
+x
+
+}
+.header-login{
+	font-size: 45px;
+	color: blue;
+	text-align: left;
+	font-family: "Arial", serif;
+	font-weight: bold;
+	
+	
+}
+#dangnhap2 {
+	list-style-type: none;
+	text-decoration: none;
+	color:black;
+	font-size: 20px;
+	font-family: "Arial", serif;
+	font-weight: bold;
+	
+}
+#dangnhap2 li { 
+ display: inline; /* make items horizontal */
+}
+#dangnhap2 li a:link, #dangnhap2 li a:visited, #dangnhap2 li a:active { 
+ text-decoration: none; /* remove underline */ 
+ color: #000000; 
+ margin: 0; 
+}
+#dangnhap2 li a:link.last-link { 
+ /* remove divider */ 
+ border-right: 0px;
+}
+#dangnhap2 li a:hover { 
+ /* change color on hover (mouseover) */ 
+ color: blue;
+}
+.submitinput{
+ margin: 10px 0px 0px;
+ text-align: center;
+ text-decoration: none;
+}
+	
+</style>
+</head>
+<body>
+	<article>
+	<div id="body-flex-login">
+		<dir id="container-login">
+			<dir id="container-login-left">
+				<dir class="header-login">
+					<span>WELCOME TO IT NEWS</span><br/>
+				</dir>
+			</dir>
+			
+			<dir id="container-login-right">
+				<dir id="header-login-right">
+					<span  id="dangnhap2">
+						<li><a href="dangnhap.html">Đăng nhập</a></span>/<span class="actived" id="dangky2">Đăng ký</span></li>
+				</dir>
+					
+				<dir id="dangky1-signup">
+					<form action="" method="post">
+						<p style="margin: 0px"><span class="glyphicon glyphicon-user"></span> Họ và tên</p>
+						<input id="hoten" name="hoten"class="texinputemail" type="text" onblur="checkname()" placeholder="Nguyễn Văn A"/>
+						<span id="checkusername" style="color: red"></span>
+						<br/>
+						<p style="margin: 0px"><span class="glyphicon glyphicon-phone-alt"></span> Số điện thoại</p>
+						<input id="sdt" name="sdt"class="texinputemail" type="text" onkeypress='return isNumberKey(event);' onblur="checknumber()" placeholder="(+84)"/>
+						<span id="checkusernumber" style="color: red"></span>
+						<br/>
+						<p style="margin: 0px"><span class="glyphicon glyphicon-envelope"></span> Địa chỉ mail</p>
+						<input id="emaildk" name="email"class="texinputemail" onblur="checkemail()" type="text" placeholder="abc@gmail.com"/>
+						<span id="checkusermail" style="color: red"></span>
+						<br/>
+						<p style="margin: 0px"><span class="glyphicon glyphicon-lock"></span> Mật khẩu</p>
+						<input id="matkhaukt" name="matkhau" onblur="checkpass()" class="texinputpass" type="password" placeholder="6-12 kí tự"/>
+						<span id="checkuserpass" style="color: red"></span>
+						<br/>
+						
+						<p style="margin: 0px"><span class="glyphicon glyphicon-lock"></span> Nhập lại mật khẩu</p>
+						<input id="nhaplaimatkhaukt" name="nhaplaimatkhau"class="texinputpass" onblur="checkenterpass()" type="password" placeholder="6-12 kí tự"/><br/>
+						<span id="checkuserpass2" style="color: red"></span>
+						
+						<input id="btndangky" class="submitinput" type="button" onclick="btndangkythanhvien();" value="Đăng ký"/>
+						<span class="submitinput"><a href= “dangnhap.html”></a></span><br/><br/>
+					</form>
+					</dir>
+	
+	</div>
+		</article>
+	<footer>
+		<div style="background: black;  position: fixed;
+ right: 0; left: 0;
+  bottom: 0;">
+		<div style="width: 25%; float:left;background: black;">
+		
+		<ul class="" style="list-style-type: none;">
+			<li style="color: white; margin-top: 15px">THÔNG TIN</li>
+			<li><a style="text-decoration: none; color: darkgray;" href="#">Giới thiệu</a></li>
+			<li><a style="text-decoration: none;color: darkgray;" href="#">Chính sách
+					bảo mật</a></li>
+		</ul>
+	</div>
+	<div style="width: 25%; float: right;background: black;">
+		<ul class="" style="list-style-type: none;">
+			<li style="color: white; margin-top: 15px">LIÊN KẾT</li>
+			<li><a style="text-decoration: none; color: darkgray;" href="#">FB: </a></li>
+			<li><a style="text-decoration: none; color: darkgray;" href="#">Email:</a></li>
+		</ul>
+	</div>
+	<div style="width: 25%; float: right;background: black;">
+		<ul class="" style="list-style-type: none;">
+			<li style="color: white;margin-top: 15px ">ĐỊA CHỈ</li>
+			<li><a style="text-decoration: none;color: darkgray;" href="#">Địa chỉ1: Hà Nội </a></li>
+			<li><a style="text-decoration: none;color: darkgray;" href="#">Địa chỉ2: Vĩnh Phúc </a></li>
+		</ul>
+	</div>
+	<div style="width: 25%; float: right;background: black;">
+		<ul class="" style="list-style-type: none;">
+		<li style="color: white; margin-top: 15px ;">LIÊN HỆ</li>
+			<li><a style="text-decoration: none;color: darkgray;" href="#"><span class="glyphicon glyphicon-earphone"></span> 0352428800</a></li>
+			<li><a style="text-decoration: none;color: darkgray;" href="#"> <span class="glyphicon glyphicon-envelope"></span> doanngan2108@gmail.com</a></li>
+		</ul>
+	</div>
+</div>
+	</footer>
+	<script type="text/javascript">
+		function checkname(){
+	if(document.getElementById("hoten").value==""){
+		document.getElementById("checkusername").innerHTML ="*Họ tên không được để trống !";
+	}else{
+		document.getElementById("checkusername").innerHTML ="";
+	}
+};
+function isNumberKey(evt){
+	var charCode = (evt.which) ? evt.which : event.keyCode;
+	  if (charCode > 31 && (charCode > 57 || charCode < 48 )){
+  return false;
+	  }
+};
+function checknumber(){
+	var vnf_regex = /(09|03|05|07)+([0-9]{8})\b/g;
+	var phoneno = document.getElementById("sdt").value;
+	if(document.getElementById("sdt").value !="" && document.getElementById("sdt").value !=undefined){
+document.getElementById("checkusernumber").innerHTML ="";
+	}else{
+		document.getElementById("checkusernumber").innerHTML ="Sdt không để trống !";
+		return;
+	}
+	if(vnf_regex.test(phoneno) == false){
+		document.getElementById("checkusernumber").innerHTML ="Sdt không đúng định dạng !";
+		return;
+	}else{
+		document.getElementById("checkusernumber").innerHTML ="";
+	}
+	
+};
+function checkemail() {
+	var email = document.getElementById("emaildk").value;
+	if(email !=""){
+		document.getElementById("checkusermail").innerHTML="";
+	 }else{
+		document.getElementById("checkusermail").innerHTML=" email khong dược để trống !";
+		return;
+	 }
+	var at = email.indexOf("@");
+	 var dot = email.lastIndexOf(".");
+	 var space = email.indexOf(" ");
+	 
+	if ((at != -1) && //có ký tự @
+	 (at != 0) && //ký tự @ không nằm ở vị trí đầu
+	 (dot != -1) && //có ký tự .
+	 (dot > at + 1) && (dot < email.length - 1) //phải có ký tự nằm giữa @ và . cuối cùng
+	 &&
+	 (space == -1)) //không có khoẳng trắng 
+	 {
+		 document.getElementById("checkusermail").innerHTML="";
+		 /*window.location ="http://localhost:8083/shoplaptop/themthanhvien/guimail";*/
+	 }else {
+		 document.getElementById("checkusermail").innerHTML=" email không hợp lệ !";
+	 }
+};
+function checkpass() {
+	var pass = document.getElementById("matkhaukt").value.length;
+	if(pass !=""){
+		document.getElementById("checkuserpass").innerHTML="";
+	 }else{
+		document.getElementById("checkuserpass").innerHTML=" mật khẩu không được để trống !";
+		return;
+	 }
+	if(pass <= 6){
+	 document.getElementById("checkuserpass").innerHTML="mật khẩu ít nhất 6 ký tự!";
+	}else {
+		document.getElementById("checkuserpass").innerHTML="";
+	}
+	
+};
+function checkenterpass() {
+	var pass =document.getElementById("matkhaukt").value;
+	var enterpass= document.getElementById("nhaplaimatkhaukt").value;
+	if(enterpass == pass){
+		document.getElementById("checkuserpass2").innerHTML="";
+	}else {
+		
+		document.getElementById("checkuserpass2").innerHTML="mật khẩu không trùng nhau!";
+	}
+	
+}
+function btndangkythanhvien(){
+var check =0;
+	if (document.getElementById("hoten").value==""){
+		document.getElementById("checkusername").innerHTML=" *tên không dược để trống !";
+		check=1;
+		return;
+	}
+	if(document.getElementById("Sđt").value==""){
+		document.getElementById("checkusernumber").innerHTML=" *SĐT không dược để trống !";
+		check=1;
+		return;
+	}
+	if(document.getElementById("emaildk").value==""){
+		 document.getElementById("checkusermail").innerHTML("*email không được để trống !");
+		 check=1;
+		 return;
+	}
+	if(document.getElementById("matkhaukt").value==""){
+		 document.getElementById("checkuserpass").innerHTML("*mật khẩu không được để trống !");
+		 check=1;
+		 return;
+	}
+	if(document.getElementById("nhaplaimatkhaukt").value==""){
+		 document.getElementById("checkuserpass2").innerHTML("* không được để trống !");
+		 check=1;
+		 return;
+	}
+	
+			if(check==0){
+				alert("đăng ký thành công");
+				
+			}else{
+				alert("đăng ký thất bại");
+			}
+};
+	</script>
+</body>
+
+</html>
