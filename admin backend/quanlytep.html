@@ -1,0 +1,365 @@
+<spring:url value="/delete" var="addUrl" />
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<style type="text/css">
+#content{
+         width: 25%;
+    min-height: 400px;
+    float: left;
+    margin-left: 10%;
+}
+#right{
+         width: 59%;
+    min-height: 400px;
+    float: left;
+    margin-bottom: 5px;
+    margin-left: 30px;
+}
+#footer{
+     height: 50px;
+     clear: both;
+     border: 1px solid #CDCDCD;
+     background-color: #F8F8FF;
+}
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+  border-radius: 5px;
+}
+.modal-header, h4, .close {
+    background-color: #5cb85c;
+    color:white !important;
+    text-align: center;
+    font-size: 30px;
+  }
+  .modal-footer {
+    background-color: #f9f9f9;
+  }
+
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>NewsPageHanu</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	  <link rel="stylesheet" href='<c:url value="/resources/Styles/styles.css" />'>
+</head>
+<body style="width: 100%;height: auto;">
+	<div id="header" class="border-top border-secondary"
+		style="width: 95%; margin-top: 10px; margin-left: 25px;">
+		<div>
+			<nav class="navbar navbar-default"
+				style="PADDING: 0PX; MARGIN: 0PX; background: #4296F7">
+				<div class="container-fluid" style="margin-left: 10%">
+					<div class="navbar-header">
+						<a class="navbar-brand" href="index2.html" style="color: white;">NewsPageHANU</a>
+					</div>
+				
+						<ul class="nav navbar-nav">
+							<li><a href="quanlydanhmuc.html" style="color: white;">Quản lý danh mục</a></li>
+							<li><a href="quanlybaiviet.html" style="color: white;">Quản lý bài viết</a></li>
+							<li><a href="quanlynhanvien.html"style="color: white;">Quản lý nhân viên</a></li>
+							<li><a href="quanlyvaitro.html" style="color: white;">Quản lý vai trò</a></li>
+							<li><a href="quanlytep.html" style="color: chartreuse;">Quản lý tệp</a></li>
+							<li><a href="adminprofile.html" style="color: white;">Trang cá nhân</a></li>
+							<li><button><a href="index.html"/>Đăng xuất</a></button></li>
+							<li><a href="#" style="color: white;"></a></li>
+						</ul>
+				</div>
+			</nav>
+		</div>
+	</div><br />
+	<br />
+	<div id="content">
+		<form action="" method="post">
+		
+			<label for="id"><i class="glyphicon glyphicon-bookmark"></i> ID </label>
+			<input id="id" name="idd" class="form-control" type="text" onkeypress='return isNumberKey(event);' onblur="checkID()" placeholder="ID"/>
+			<span id="checkidd" style="color: red"></span>
+			<br/>
+			
+			<label for="baiviet"><i class="glyphicon glyphicon-bookmark"></i> Tên bài viết </label>
+			<input id="tenbaiviet" name="baiviet" class="form-control" type="text" onblur="checkten()" placeholder="Tên bài viết"/>
+			<span id="checktenbaiviet" style="color: red"></span>
+			<br/>
+			
+			<label for="ngaythem"><i class="glyphicon glyphicon-time"></i> Ngày thêm ảnh </label>
+			<input id="ngaythemanh" name="ngaythem" class="form-control" type="text" onblur="checkngaythem()" placeholder="dd/mm/yyyy"/>
+			<span id="checkngaythemanh" style="color: red"></span>
+			<br/>
+				
+			<label for="ngaycapnhat"><i class="glyphicon glyphicon-time"></i> Ngày cập nhật </label>
+			<input id="ngaycapnhat" name="ngaycapnhat" class="form-control" type="text" onblur="checkngaysua()" placeholder="dd/mm/yyyy"/>
+			<span id="checkngaycapnhat" style="color: red"></span>
+			<br/>
+							
+			<label for="hinhanh">Tải ảnh</label>
+				<input type="file" class="form-control" name="hinhanh" id="hinhanh" onchange="uploadfileanh()" ><br/>
+					
+				<span id="checkhinhanh" style="color: red"></span>
+				<br/>
+			
+			<input id="btnthem" class="submitinput" type="button" onclick="btnthemtep();" value="Thêm"/><br/><br/>
+						
+			</form>			
+    </div>
+	
+    <div id="right">
+    	<table class="table table-striped fixed" id="tablethemdanhmuc" >
+			<thead>
+				<tr>
+					<th style="text-align: center;">ID</th>
+					<th style="text-align: center;">Tên Bài Viết</th>
+					<th style="text-align: center;">Ngày thêm ảnh</th>
+					<th style="text-align: center;">Ngày cập nhật</th>
+					<th style="text-align: center;">Hình ảnh</th>
+					<th style="text-align: center;" colspan="2">Tác vụ</th>
+				</tr>
+			</thead>
+				
+			<tbody>
+				<tr id="demo">
+					<td style="text-align: center;">1</td>
+						
+					<td style="text-align: center;"><span id="tenbaiviet">HTML</span></td>
+						
+					<td style="text-align: center;"><span id="ngaythem">30/05/2019</span></td>
+						
+					<td style="text-align: center;"><span id="ngaycapnhat">01/06/2019</span></td>
+						
+					<td style="text-align: center;"><span id="chonanh"> <img src="images/html-homepage-layout-demo.png" style="width:100px;height:100px;"></span></td>
+						
+					<td style="text-align: center;">
+					<button type="button" class="btn btn-warning" id="myBtn" >Sửa</button></td>
+					
+					<td><input type="submit" onclick="deletetep()" class="btn btn-danger" value="Xóa"/></td>
+						
+				</tr>
+					
+				<tr id="demo1">
+					<td style="text-align: center;">2</td>
+						
+					<td style="text-align: center;"><span id="tenbaiviet">CSS</span></td>
+						
+					<td style="text-align: center;"><span id="ngaythem">30/05/2019</span></td>
+						
+					<td style="text-align: center;"><span id="ngaycapnhat">01/06/2019</span></td>
+						
+					<td style="text-align: center;"><span id="chonanh"><img src="Eri.jpg" style="width:100px;height:100px;"></span></td>
+						
+					<td style="text-align: center;"><button type="button" class="btn btn-warning" id="myBtn1" >Sửa</button></td>
+					
+					<td><input type="submit" onclick="deletetep1()" class="btn btn-danger" value="Xóa"/></td>
+						
+				</tr>
+					
+			</tbody>
+			</table>
+			
+				<div class="pagination">
+				<a href="#">&laquo;</a>
+				<a href="#" class="active">1</a>
+				<a href="#" >2</a>
+				<a href="#">&raquo;</a>
+			</div>
+    </div>
+    <div id="footer"> 
+    </div>
+	
+	<div class="container">
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog" >
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header" style="padding:35px 50px;">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4><span class="glyphicon glyphicon-lock"></span> Danh mục</h4>
+        </div>
+        <div class="modal-body" style="padding:40px 50px;">
+          <form role="form">
+            <div class="form-group">
+              <label for="ID"><span class="glyphicon glyphicon-user"></span> ID</label>
+              <input type="text" class="form-control" id="idd" placeholder="ID">
+            </div>
+            <div class="form-group">
+              <label for="tdm"><span class="glyphicon glyphicon-eye-open"></span> Tên bài viết</label>
+              <input type="text" class="form-control" id="tdm" placeholder="Tên bài viết">
+            </div>
+            <div class="form-group">
+              <label for="nt"><span class="glyphicon glyphicon-eye-open"></span> Ngày thêm ảnh</label>
+              <input type="text" class="form-control" id="nt" placeholder="Ngày thêm ảnh">
+            </div>
+			<div class="form-group">
+              <label for="ns"><span class="glyphicon glyphicon-eye-open"></span> Ngày cập nhật</label>
+              <input type="text" class="form-control" id="ns" placeholder="Ngày cập nhật">
+            </div>
+			<div class="form-group">
+              <label for="slbv"><span class="glyphicon glyphicon-eye-open"></span> Chọn ảnh</label>
+				<form action="upload.php" method="post" enctype="multipart/form-data">
+    			<input type="file" name="tenanh" id="chonanh">
+   			    <input type="submit" value="Tải Ảnh Lên" name="submit">
+				</form>            
+			</div>
+              <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Sửa </button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+        </div>
+      </div>
+      
+    </div>
+  </div> 
+</div>
+	
+	<script type="text/javascript">
+	
+	function HJK(){
+	document.getElementById("#myModal").modal();
+	}
+	
+function checkID(){
+	if(document.getElementById("id").value !=""){
+		document.getElementById("checkidd").innerHTML = "";
+		check=0;
+	}else{
+		document.getElementById("checkidd").innerHTML = "*ID danh mục không được để trống !";
+		check=1;
+		}
+	};
+
+	
+function checkten(){
+	if(document.getElementById("tenbaiviet").value !=""){
+		document.getElementById("checktenbaiviet").innerHTML = "";
+		check=0;
+	}else{
+		document.getElementById("checktenbaiviet").innerHTML = "*Tên bài viết không được để trống !";
+		check=1;
+	}
+	if(document.getElementById("tenbaiviet").value.length >=20){
+		document.getElementById("checktenbaiviet").innerHTML = "*Tên bài viết không được dài quá 70 kí tự !";
+		check=1;
+	}
+};
+
+function isNumberKey(evt){
+	var charCode = (evt.which) ? evt.which : event.keyCode;
+	  if (charCode > 31 && (charCode > 57 || charCode < 48 )){
+  return false;
+	  }
+}; 
+
+function checkngaythem(){
+	
+	// regular expression to match required date format
+    re = /^[0-3]?[0-9]\/[01]?[0-9]\/[12][90][0-9][0-9]$/;
+
+    if(document.getElementById("ngaythemanh").value != "" && !document.getElementById("ngaythemanh").value.match(re)) {
+      document.getElementById("checkngaythemanh").innerHTML = "*Ngày thêm ảnh không đúng định dạng !";
+      check=1;
+		return;
+	}else{
+		document.getElementById("checkngaythemanh").innerHTML = "";
+		check=0;
+	}
+	};
+	
+function checkngaysua(){
+	
+	// regular expression to match required date format
+	    re = /^[0-3]?[0-9]\/[01]?[0-9]\/[12][90][0-9][0-9]$/;
+
+    if(document.getElementById("ngaycapnhat").value != "" && !document.getElementById("ngaycapnhat").value.match(re)) {
+      document.getElementById("checkngaycapnhat").innerHTML = "*Ngày cập nhật ảnh không đúng định dạng !";
+      check=1;
+		return;
+	}else{
+		document.getElementById("checkngaycapnhat").innerHTML = "";
+		check=0;
+	}
+	};	
+
+function btnthemtep(){
+var check =0;
+
+	if (document.getElementById("id").value==""){
+		document.getElementById("checkidd").innerHTML=" id không được để trống !";
+		check=1;
+		return;
+	} 
+	
+	if (document.getElementById("tenbaiviet").value==""){
+		document.getElementById("checktenbaiviet").innerHTML=" tên bài viết không được để trống !";
+		check=1;
+		return;
+	}
+	if(document.getElementById("ngaythemanh").value==""){
+		document.getElementById("checkngaythemanh").innerHTML=" ngày thêm ảnh không được để trống !";
+		check=1;
+		return;
+	}
+	if(document.getElementById("ngaycapnhat").value==""){
+		 document.getElementById("checkngaycapnhat").innerHTML = "*ngày cập nhật ảnh không được để trống !";
+		 check=1;
+		 return;
+	}
+			if(check==0){
+				alert("thêm thành công");
+				
+			}else{
+				alert("thêm thất bại");
+			}
+};
+
+function deletetep(){
+	if(confirm("Bạn có chắc muốn xóa tệp ?") == true){
+	    document.getElementById("demo").innerHTML = "Xóa thành công";
+		}else{
+		document.getElementById("danhmuc").innerHTML = "HTML";
+	 }
+};
+
+function deletetep1(){
+	if(confirm("Bạn có chắc muốn xóa tệp ?") == true){
+	    document.getElementById("demo1").innerHTML = "Xóa thành công";
+		}else{
+		document.getElementById("danhmuc").innerHTML = "CSS";
+	 }
+};
+</script>
+<script>
+$(document).ready(function(){
+  $("#myBtn").click(function(){
+    $("#myModal").modal();
+  });
+  $("#myBtn1").click(function(){
+    $("#myModal").modal();
+  });
+});
+</script>
+</body>
+
+</html>

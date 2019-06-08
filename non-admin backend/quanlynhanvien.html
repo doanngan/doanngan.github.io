@@ -1,0 +1,429 @@
+<spring:url value="/delete" var="addUrl" />
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<style type="text/css">
+#content{
+         width: 25%;
+    min-height: 400px;
+    float: left;
+    margin-left: 10%;
+}
+#right{
+         width: 59%;
+    min-height: 400px;
+    float: left;
+    margin-bottom: 5px;
+    margin-left: 30px;
+}
+#footer{
+     height: 50px;
+     clear: both;
+     border: 1px solid #CDCDCD;
+     background-color: #F8F8FF;
+}
+
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+  border-radius: 5px;
+}
+.modal-header, h4, .close {
+    background-color: #5cb85c;
+    color:white !important;
+    text-align: center;
+    font-size: 30px;
+  }
+  .modal-footer {
+    background-color: #f9f9f9;
+  }
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>NewsPageHANU</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	  
+</head>
+<body style="width: 100%;height: auto;">
+	<input id="sizeall" type="hidden" value="${sizeall }" />
+	<div id="header" class="border-top border-secondary"
+		style="width: 95%; margin-top: 10px; margin-left: 25px;">
+		<div>
+			<nav class="navbar navbar-default"
+				style="PADDING: 0PX; MARGIN: 0PX; background: #4296F7">
+				<div class="container-fluid" style="margin-left: 10%">
+					<div class="navbar-header">
+						<a class="navbar-brand" href= "index2.html" style="color: white;">NewsPageHANU</a>
+					</div>
+				
+						<ul class="nav navbar-nav">
+							<li><a href="quanlydanhmuc.html" style="color: white;">Quản lý danh mục</a></li>
+							<li><a href="quanlybaiviet.html" style="color: white;">Quản lý bài viết</a></li>
+							<li><a href="403.html"style="color: chartreuse;">Quản lý nhân viên</a></li>
+							<li><a href="403.html" style="color: white;">Quản lý vai trò</a></li>
+							<li><a href="quanlytep.html" style="color: white;">Quản lý tệp</a></li>
+							<li><a href="editor profile.html" style="color: white;">Trang cá nhân</a></li>
+							<li><button><a href="index.html"/>Đăng xuất</a></button></li>
+							<li><a href="#" style="color: white;"></a></li>
+						</ul>
+				</div>
+			</nav>
+		</div>
+	</div><br>
+	<br>
+	<div id="content">
+		<form action="" method="post">
+			<label><i class="glyphicon glyphicon-user"></i> Họ và tên</label>
+			<input id="hoten" name="hoten"class="texinputemail" type="text" onblur="checkname()" placeholder="full name"/>
+			<span id="checkusername" style="color: red"></span>
+			<br/>
+			<label><i class="glyphicon glyphicon-phone-alt"></i> Số điện thoại</label>
+			<input id="sdt" name="sdt"class="texinputemail" type="text" onkeypress='return isNumberKey(event);' onblur="checknumber()" placeholder="number"/>
+						<span id="checkusernumber" style="color: red"></span>
+						<br/>
+						<label><i class="glyphicon glyphicon-envelope"></i> Địa chỉ mail</label>
+						<input id="emaildk" name="email"class="texinputemail" onblur="checkemail()" type="text" placeholder="Email"/>
+						<span id="checkusermail" style="color: red"></span>
+						<br/>
+						<label><i class="glyphicon glyphicon-lock"></i> Mật khẩu</label>
+						<input id="matkhaukt" name="matkhau" onblur="checkpass()" class="texinputpass" type="password" placeholder="Password"/>
+						<span id="checkuserpass" style="color: red"></span>
+						<br/>
+						
+						<label><i class="glyphicon glyphicon-lock"></i> Nhập lại mật khẩu</label>
+						<input id="nhaplaimatkhaukt" name="nhaplaimatkhau"class="texinputpass" onblur="checkenterpass()" type="password" placeholder="Enter password again"/><br/>
+						<span id="checkuserpass2" style="color: red"></span>
+							<br/>
+							
+						<p style="margin: 15px"><label><i class="glyphicon glyphicon-cog"></i> Phân Quyền</label><br>
+						<select id="phanquyen" name="phanquyen">
+						  <option value="1">Admin nội dung</option>
+						  <option value="2">Admin kĩ thuật</option>
+						</select>
+						<br/>
+							<br/>
+						<input id="btndangky" class="submitinput" type="button" onclick="btndangkythanhvien();" value="Đăng ký"/><br/><br/>
+						
+						</div>
+						
+			</form>
+    </div>
+    <div id="right">
+    	<table class="table table-striped fixed" id="tablethem-thanhvien" >
+			<thead>
+				<tr>
+					<th style="text-align: center;">STT</th>
+					<th style="text-align: center;">Email</th>
+					<th style="text-align: center;">Họ Tên</th>
+					<th style="text-align: center;">SĐT</th>
+					<th style="text-align: center;">Phân quyền</th>
+					<th style="text-align: center;" colspan="2">Tác vụ</th>
+				</tr>
+			</thead>
+				
+			<tbody>
+				<tr id="demo">
+					<td style="text-align: center;">1</td>
+						
+					<td><span id="mail">ngann@gmail.com</span></td>
+						
+					<td><span id="hoten">NganDoan</span></td>
+						
+					<td><span id="sdt">0352428800</span></td>
+						
+					<td><span id="phanquyen">Nhân viên nội dung</span></td>
+						
+					<td style="text-align: center;">
+					<button type="button" class="btn btn-warning" id="myBtn" >Sửa</button>
+						
+					</td>
+						
+					<td><input type="submit" onclick="deleteuser()" class="btn btn-danger" value="xóa"/></td>
+						
+				</tr>
+					
+				<tr id="demo1">
+					<td style="text-align: center;">2</td>
+						
+					<td><span id="mail1">linhh@gmail.com</span></td>
+						
+					<td><span id="hoten1">ChungLinh</span></td>
+						
+					<td><span id="sdt1">0352455655</span></td>
+						
+					<td><span id="phanquyen1">Nhân viên kĩ thuật</span></td>
+						
+					<td style="text-align: center;">
+					<button type="button" class="btn btn-warning" id="myBtn1" >Sửa</button>
+						
+					</td>
+						
+					<td><input type="submit" onclick="deleteuser1()" class="btn btn-danger" value="xóa"/></td>
+						
+				</tr>
+					
+			</tbody>
+
+		</table>
+			
+			<div class="pagination">
+				<a href="#">&laquo;</a>
+				<a href="#" class="active">1</a>
+				<a href="#" >2</a>
+				<a href="#">&raquo;</a>
+			</div>
+    </div>
+    <footer>
+		<div style="background: black;">
+		<div style="width: 25%; float:left;background: black;">
+		
+		<ul class="" style="list-style-type: none;text-align: center;">
+			<li style="color: white; margin-top: 15px">THÔNG TIN</li>
+			<li><a style="text-decoration: none; color: darkgray;" href="#">Giới thiệu</a></li>
+			<li><a style="text-decoration: none;color: darkgray;" href="#">Chính sách bảo mật</a></li>
+		</ul>
+	</div>
+	<div style="width: 25%; float: right;background: black;">
+		<ul class="" style="list-style-type: none;">
+			<li style="color: white; margin-top: 15px">LIÊN KẾT</li>
+			<li><a style="text-decoration: none; color: darkgray;" href="#">FB: </a></li>
+			<li><a style="text-decoration: none; color: darkgray;" href="#">Email:  </a></li>
+		</ul>
+	</div>
+	<div style="width: 25%; float: right;background: black;">
+		<ul class="" style="list-style-type: none;text-align: center;">
+			<li style="color: white;margin-top: 15px ">ĐỊA CHỈ</li>
+			<li><a style="text-decoration: none;color: darkgray;" href="#">Địa chỉ1: Hà Nội </a></li>
+			<li><a style="text-decoration: none;color: darkgray;" href="#">Địa chỉ2: Bắc Giang </a></li>
+		</ul>
+	</div>
+	<div style="width: 25%; float: right;background: black;">
+		<ul class="" style="list-style-type: none;">
+		<li style="color: white; margin-top: 15px ;">LIÊN HỆ</li>
+			<li><a style="text-decoration: none;color: darkgray;" href="#"><span class="glyphicon glyphicon-earphone"></span> 0352428800</a></li>
+			<li><a style="text-decoration: none;color: darkgray;" href="#"> <span class="glyphicon glyphicon-envelope"></span> doanngan2108@gmail.com</a></li>
+		</ul>
+	</div>
+</div>
+	</footer>
+	
+	<div class="container">
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog" >
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header" style="padding:35px 50px;">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4><span class="glyphicon glyphicon-lock"></span> Nhân viên</h4>
+        </div>
+        <div class="modal-body" style="padding:40px 50px;">
+          <form role="form">
+            <div class="form-group">
+              <label for="ID"><span class="glyphicon glyphicon-user"></span> Họ và tên</label>
+              <input type="text" class="form-control" id="idd" placeholder="Họ và tên">
+            </div>
+            <div class="form-group">
+              <label for="tdm"><span class="glyphicon glyphicon-eye-open"></span> Số điện thoại</label>
+              <input type="text" class="form-control" id="tdm" placeholder="Số điện thoại">
+            </div>
+            <div class="form-group">
+              <label for="nt"><span class="glyphicon glyphicon-eye-open"></span> Địa chỉ mail</label>
+              <input type="text" class="form-control" id="nt" placeholder="Địa chỉ mail">
+            </div>
+			<div class="form-group">
+              <label for="ns"><span class="glyphicon glyphicon-eye-open"></span> Mật khẩu </label>
+              <input type="text" class="form-control" id="ns" placeholder="Mật khẩu">
+            </div>
+			<div class="form-group">
+              <label for="slbv"><span class="glyphicon glyphicon-eye-open"></span> Phân quyền</label>
+              <input type="text" class="form-control" id="slbv" placeholder="Phân quyền">
+            </div>
+              <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Sửa </button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+        </div>
+      </div>
+      
+    </div>
+  </div> 
+</div>
+	
+<script type="text/javascript">
+
+	function HJK(){
+	document.getElementById("#myModal").modal();
+	}
+	
+function checkname(){
+	if(document.getElementById("hoten").value!=""){
+		document.getElementById("checkusername").innerHTML = "";
+		check=0;
+	}else{
+		document.getElementById("checkusername").innerHTML = "*Họ tên không được để trống !";
+		check=1;
+	}
+};
+function isNumberKey(evt){
+	var charCode = (evt.which) ? evt.which : event.keyCode;
+	  if (charCode > 31 && (charCode > 57 || charCode < 48 )){
+  return false;
+	  }
+};
+function checknumber(){
+	var vnf_regex = /(09|03|05|07)+([0-9]{8})\b/g;
+	var phoneno = document.getElementById("sdt").value;
+	if(vnf_regex.test(phoneno) == false){
+		document.getElementById("checkusernumber").innerHTML = "Sdt không đúng định dạng !" ;
+		check=1;
+		return;
+	}else{
+		document.getElementById("checkusernumber").innerHTML = "";
+		check=0;
+	}
+	if(document.getElementById("sdt").value!="" && document.getElementById("sdt").value!=undefined){
+		document.getElementById("checkusernumber").innerHTML = "";
+		check=0;
+	}
+};
+function checkemail() {
+	var email = document.getElementById("emaildk").value;
+	var at = email.indexOf("@");
+	 var dot = email.lastIndexOf(".");
+	 var space = email.indexOf(" ");
+	if ((at != -1) && //có ký tự @
+	 (at != 0) && //ký tự @ không nằm ở vị trí đầu
+	 (dot != -1) && //có ký tự .
+	 (dot > at + 1) && (dot < email.length - 1) //phải có ký tự nằm giữa @ và . cuối cùng
+	 &&
+	 (space == -1)) //không có khoảng trắng 
+	 {
+		 document.getElementById("checkusermail").innerHTML = "";
+		 check=0;
+	 }else {
+		 document.getElementById("checkusermail").innerHTML = "* email không hợp lệ !";
+		 check=1;
+	 }
+};
+function checkpass() {
+	var pass = document.getElementById("matkhaukt").value.length;
+	if(pass !=""){
+		document.getElementById("checkuserpass").innerHTML="";
+	 }else{
+		document.getElementById("checkuserpass").innerHTML=" password không được để trống !";
+		return;
+	 }
+	if(pass <= 6){
+	 document.getElementById("checkuserpass").innerHTML = "mật khẩu > 6 kí tự!";
+	 check=1;
+	}else {
+		document.getElementById("checkuserpass").innerHTML = "";
+		check=0;
+	}
+	
+};
+function checkenterpass() {
+	var pass = document.getElementById("matkhaukt").value;
+	var enterpass = document.getElementById("nhaplaimatkhaukt").value;
+	if(enterpass == pass){
+		document.getElementById("checkuserpass2").innerHTML = "";
+		check=0;
+	}else {
+		document.getElementById("checkuserpass2").innerHTML = "mật khẩu không trùng nhau !";
+		check=1;
+	}
+	
+}
+function btndangkythanhvien(){
+var check =0;
+	if (document.getElementById("hoten").value==""){
+		document.getElementById("checkusername").innerHTML=" tên không được để trống !";
+		check=1;
+		return;
+	}
+	if(document.getElementById("sdt").value==""){
+		document.getElementById("checkusernumber").innerHTML=" sđt không được để trống !";
+		check=1;
+		return;
+	}
+	if(document.getElementById("emaildk").value==""){
+		 document.getElementById("checkusermail").innerHTML = "*email không được để trống !";
+		 check=1;
+		 return;
+	}
+	if(document.getElementById("matkhaukt").value==""){
+		 document.getElementById("checkuserpass").innerHTML = "*mật khẩu không được để trống !";
+		 check=1;
+		 return;
+	}
+	if(document.getElementById("nhaplaimatkhaukt").value==""){
+		 document.getElementById("checkuserpass2").innerHTML = "* không được để trống !";
+		 check=1;
+		 return;
+	}
+	
+			if(check==0){
+				alert("đăng ký thành công");
+				
+			}else{
+				alert("đăng ký thất bại");
+			}
+};
+function deleteuser(){
+	if(confirm("Bạn có chắc muốn xóa nhân viên ?") == true){
+	    document.getElementById("demo").innerHTML = "Xóa thành công";
+		}else{
+		document.getElementById("mail").innerHTML = "ngann@gmail.com";
+		document.getElementById("hoten").innerHTML = "NganDoan";
+		document.getElementById("sdt").innerHTML = "0352428800";
+		document.getElementById("phanquyen").innerHTML = "Nhân viên nội dung";
+	 }
+};
+
+function deleteuser1(){
+	if(confirm("Bạn có chắc muốn xóa nhân viên ?") == true){
+	    document.getElementById("demo1").innerHTML = "Xóa thành công";
+		}else{
+		document.getElementById("mail1").innerHTML = "linhh@gmail.com";
+		document.getElementById("hoten1").innerHTML = "ChungLinh";
+		document.getElementById("sdt1").innerHTML = "0352455655";
+		document.getElementById("phanquyen1").innerHTML = "Nhân viên kĩ thuật";
+	 }
+};
+	</script>
+	<script>
+$(document).ready(function(){
+  $("#myBtn").click(function(){
+    $("#myModal").modal();
+  });
+  $("#myBtn1").click(function(){
+    $("#myModal").modal();
+  });
+});
+</script>
+</body>
+
+</html>

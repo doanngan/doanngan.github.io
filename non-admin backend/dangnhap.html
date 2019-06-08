@@ -12,10 +12,9 @@
  margin: 0; 
  padding: 0; 
  font-family: 'Helvetica', 'Arial'; /* fonts */
- background-image: url("img/bgweb.jpg");
+ background-image: url("images/bgweb.jpg");
  background-attachment: fixed;
  background-position: right top;
-x
 
 }
 .header-login{
@@ -164,15 +163,14 @@ function btnchecklongin(){
 		 return;
 	}
 	var user="ngandoan98@gmail.com";
-	var pass="12345";
-	if(document.getElementById("email").value=="ngandoan98@gmail.com" && document.getElementById("matkhau").value=="12345"){
-		alert("đăng nhập thành công");
+	var pass="1234567";
+	if(document.getElementById("email").value=="ngandoan98@gmail.com" && document.getElementById("matkhau").value=="1234567"){
+		window.open("editor profile.html");
 	}else{
 		alert("đăng nhập thất bại");
 	}
 	
 };
-
 
 </script>
 </body>

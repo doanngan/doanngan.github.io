@@ -1,0 +1,430 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<style>
+	body, html{
+margin: 0; 
+ padding: 0; 
+ font-family: 'Helvetica', 'Arial'; /* fonts */
+ background-image: url("images/bgweb.jpg");
+ background-attachment: fixed;
+ background-position: right top;
+ width: 100%;
+ height: auto;
+}
+#header{
+	width: 95%;
+	margin-top: 10px;
+	margin-left: 25px;
+}
+input[type="search-box"] {
+      width: 300px;
+      box-sizing: border-box;
+      border: 1px solid gray;
+      border-radius: 4px;
+      outline:none;
+      padding: 5px 10px;
+      margin: 8px;
+    }
+.button{
+	font-size:14px;
+	padding: 6px;
+	border-radius: 8px;
+	border: white;
+
+}
+.dropbtn {
+  background-color: #4296F7;
+  color: white;
+  padding: 14px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #4296F7;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+ul.login-logout a{
+	text-decoration:none;
+	color: white;
+	border: none;
+    margin: 10px; 
+    padding: 0;
+    float: right; 
+}
+.post-preview{
+	border: solid 1px;
+	border-color: lightblue;
+	padding: 2%;
+}
+.info{
+	border: none;
+	color: white;
+	background:#2196F3;
+	}
+.info:hover{
+	background: #0b7dda;
+}
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: black;
+  float: center;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+  border-radius: 5px;
+}
+
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>NewsPageHANU</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	  
+</head>
+<body>
+	<input id="sizeall" type="hidden" value="${sizeall }">
+	<div id="header" class="border-top border-secondary">
+		<div>
+			<nav class="navbar navbar-default"
+				style="padding: 0px; margin: 0px; background: #4296F7">
+				<div class="container-fluid" style="margin-left: 10%">
+					<div class="navbar-header">
+						<a class="navbar-brand" href='<c:url value="/homepage"/>' style=" color: white;"
+						>NewsPageHANU</a>
+					</div>
+						<div class="nav navbar-nav">
+							<li><a href="#" style=" color: white;">CSS</a></li>
+							<li class="dropdown">
+  					<button onclick="myFunction()" class="dropbtn">HTML</button>
+  					<ul id="myDropdown" class="dropdown-content">
+    				<a href="">Wordpress</a>
+   					 <a href="">SEO</a>
+    				<a href="">Hosting</a>
+    				</ul>
+  					</li>
+							<li><a href="#" style=" color: white;">Hỏi đáp</a></li>
+							<li><a href="#" style=" color: white;">Liên hệ</a></li>
+						</div>
+						<div class="search-container" style="float: right;">
+    <form action="/action_page.php">
+      <input type="search-box" name="search" placeholder="Search">
+     <button class="button" type="submit"><i class="fa fa-search"></i></button>
+  </form>
+  <ul class="login-logout">
+  	<a href="index.html" tiltle="">Đăng xuất</a>
+  	     <a href="adminprofile.html" title="">Trang cá nhân</a>
+  </ul>
+</div>
+  </nav>
+  <br>
+  <div id="masthead">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>IT Jobs</h1>
+            <span class="subheading"> A website for finding IT jobs</span>
+            <h3>More than 1000 IT Jobs for Developers </h3>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-preview">
+            <h3 class="post-title">
+             <font color="red"> 05 Web dev (PHP/Java/Python/NodeJS) </font>
+            </h3>
+            
+          <p class="post-meta">Posted by
+            <a href="https://doanngan.github.io/frontend-index.html/#">IT Jobs</a>
+            on June 1, 2019</p>
+            <p>
+            	HTML elements are the building blocks of HTML pages. With HTML constructs, images and other objects such as interactive forms may be embedded into the rendered page. HTML provides a means to create structured documents by denoting structural semantics for text such as headings, paragraphs, lists, links, quotes and other items. HTML elements are delineated by tags, written using angle brackets. 
+
+            </p>
+            <button class="btn info"><a href="chitietbaiviet2.html">Xem thêm</button>
+        </div>
+        <hr>
+        <div class="post-preview">
+            <h3 class="post-title">
+             <font color="red"> Back End Developer (NodeJS, SQL, HTML5) </font>
+            </h3>
+          
+          <p class="post-meta">Posted by
+            <a href="https://doanngan.github.io/frontend-index.html/#">Start Bootstrap</a>
+            on May 18, 2019</p>
+            <p>
+            	HTML elements are the building blocks of HTML pages. With HTML constructs, images and other objects such as interactive forms may be embedded into the rendered page. HTML provides a means to create structured documents by denoting structural semantics for text such as headings, paragraphs, lists, links, quotes and other items. HTML elements are delineated by tags, written using angle brackets. 
+
+            </p>
+            <button class="btn info"><a href="chitietbaiviet2.html">Xem thêm</button>
+        </div>
+        <hr>
+        <div class="post-preview">
+            <h3 class="post-title">
+             <font color="red"> Front End Developer </font>
+            </h3>
+          </a>
+          <p class="post-meta">Posted by
+            <a href="https://doanngan.github.io/frontend-index.html/#">Start Bootstrap</a>
+            on August 24, 2019</p>
+            <p>
+            	HTML elements are the building blocks of HTML pages. With HTML constructs, images and other objects such as interactive forms may be embedded into the rendered page. HTML provides a means to create structured documents by denoting structural semantics for text such as headings, paragraphs, lists, links, quotes and other items. HTML elements are delineated by tags, written using angle brackets. 
+
+            </p>
+            <button class="btn info"><a href="chitietbaiviet2.html">Xem thêm</button>
+        </div>
+        <hr>
+				</div>
+			</nav>
+		</div>
+	</div><br>
+	<br>
+	<div class="pagination">
+		<a href="index.html">&laquo;</a>
+		<a href="index.html" class="active">1</a>
+		<a href="index.html" >2</a>
+		<a href="index.html">&raquo;</a>
+	</div>
+    <footer>
+		<div style="background: black;
+ right: 0; left: 0;
+  bottom: 0;">
+		<div style="width: 25%; float:left;background: black;">
+		
+		<ul class="" style="list-style-type: none;">
+			<li style="color: white; margin-top: 15px">THÔNG TIN</li>
+			<li><a style="text-decoration: none; color: darkgray;" href="#">Giới thiệu</a></li>
+			<li><a style="text-decoration: none;color: darkgray;" href="#">Chính sách
+					bảo mật</a></li>
+		</ul>
+	</div>
+	<div style="width: 25%; float: right;background: black;">
+		<ul class="" style="list-style-type: none;">
+			<li style="color: white; margin-top: 15px">LIÊN KẾT</li>
+			<li><a style="text-decoration: none; color: darkgray;" href="#">FB: </a></li>
+			<li><a style="text-decoration: none; color: darkgray;" href="#">Email:</a></li>
+		</ul>
+	</div>
+	<div style="width: 25%; float: right;background: black;">
+		<ul class="" style="list-style-type: none;">
+			<li style="color: white;margin-top: 15px ">ĐỊA CHỈ</li>
+			<li><a style="text-decoration: none;color: darkgray;" href="#">Địa chỉ1: Hà Nội </a></li>
+			<li><a style="text-decoration: none;color: darkgray;" href="#">Địa chỉ2: Vĩnh Phúc </a></li>
+		</ul>
+	</div>
+	<div style="width: 25%; float: right;background: black;">
+		<ul class="" style="list-style-type: none;">
+		<li style="color: white; margin-top: 15px ;">LIÊN HỆ</li>
+			<li><a style="text-decoration: none;color: darkgray;" href="#"><span class="glyphicon glyphicon-earphone"></span> 0352428800</a></li>
+			<li><a style="text-decoration: none;color: darkgray;" href="#"> <span class="glyphicon glyphicon-envelope"></span> doanngan2108@gmail.com</a></li>
+		</ul>
+	</div>
+</div>
+	</footer>
+	
+<script type="text/javascript">
+
+function checkname(){
+	if(document.getElementById("hoten").value!=""){
+		document.getElementById("checkusername").innerHTML = "";
+		check=0;
+	}else{
+		document.getElementById("checkusername").innerHTML = "*Họ tên không được để trống !";
+		check=1;
+	}
+};
+function isNumberKey(evt){
+	var charCode = (evt.which) ? evt.which : event.keyCode;
+	  if (charCode > 31 && (charCode > 57 || charCode < 48 )){
+  return false;
+	  }
+};
+function checknumber(){
+	var vnf_regex = /(09|03|05|07)+([0-9]{8})\b/g;
+	var phoneno = document.getElementById("sdt").value;
+	if(vnf_regex.test(phoneno) == false){
+		document.getElementById("checkusernumber").innerHTML = "Sdt không đúng định dạng !" ;
+		check=1;
+		return;
+	}else{
+		document.getElementById("checkusernumber").innerHTML = "";
+		check=0;
+	}
+	if(document.getElementById("sdt").value!="" && document.getElementById("sdt").value!=undefined){
+		document.getElementById("checkusernumber").innerHTML = "";
+		check=0;
+	}
+};
+function checkemail() {
+	var email = document.getElementById("emaildk").value;
+	var at = email.indexOf("@");
+	 var dot = email.lastIndexOf(".");
+	 var space = email.indexOf(" ");
+	if ((at != -1) && //có ký tự @
+	 (at != 0) && //ký tự @ không nằm ở vị trí đầu
+	 (dot != -1) && //có ký tự .
+	 (dot > at + 1) && (dot < email.length - 1) //phải có ký tự nằm giữa @ và . cuối cùng
+	 &&
+	 (space == -1)) //không có khoảng trắng 
+	 {
+		 document.getElementById("checkusermail").innerHTML = "";
+		 check=0;
+		 /*window.location ="http://localhost:8083/shoplaptop/themthanhvien/guimail";*/
+	 }else {
+		 document.getElementById("checkusermail").innerHTML = "* email không hợp lệ !";
+		 check=1;
+	 }
+};
+function checkpass() {
+	var pass = document.getElementById("matkhaukt").value.length;
+	if(pass !=""){
+		document.getElementById("checkuserpass").innerHTML="";
+	 }else{
+		document.getElementById("checkuserpass").innerHTML=" password không được để trống !";
+		return;
+	 }
+	if(pass <= 6){
+	 document.getElementById("checkuserpass").innerHTML = "mật khẩu > 6 kí tự!";
+	 check=1;
+	}else {
+		document.getElementById("checkuserpass").innerHTML = "";
+		check=0;
+	}
+	
+};
+function checkenterpass() {
+	var pass = document.getElementById("matkhaukt").value;
+	var enterpass = document.getElementById("nhaplaimatkhaukt").value;
+	if(enterpass == pass){
+		document.getElementById("checkuserpass2").innerHTML = "";
+		check=0;
+	}else {
+		document.getElementById("checkuserpass2").innerHTML = "mật khẩu không trùng nhau !";
+		check=1;
+	}
+	
+}
+function btndangkythanhvien(){
+var check =0;
+	if (document.getElementById("hoten").value==""){
+		document.getElementById("checkusername").innerHTML=" tên không được để trống !";
+		check=1;
+		return;
+	}
+	if(document.getElementById("sdt").value==""){
+		document.getElementById("checkusernumber").innerHTML=" sđt không được để trống !";
+		check=1;
+		return;
+	}
+	if(document.getElementById("emaildk").value==""){
+		 document.getElementById("checkusermail").innerHTML = "*email không được để trống !";
+		 check=1;
+		 return;
+	}
+	if(document.getElementById("matkhaukt").value==""){
+		 document.getElementById("checkuserpass").innerHTML = "*mật khẩu không được để trống !";
+		 check=1;
+		 return;
+	}
+	if(document.getElementById("nhaplaimatkhaukt").value==""){
+		 document.getElementById("checkuserpass2").innerHTML = "* không được để trống !";
+		 check=1;
+		 return;
+	}
+	
+			if(check==0){
+				alert("đăng ký thành công");
+				
+			}else{
+				alert("đăng ký thất bại");
+			}
+};
+function deleteuser(){
+	if(confirm("Bạn có chắc muốn xóa nhân viên ?") == true){
+	    document.getElementById("demo").innerHTML = 
+                "Xóa thành công";
+		}else{
+		document.getElementById("demo").innerHTML = "";
+	 }
+};
+
+function deleteuser1(){
+	if(confirm("Bạn có chắc muốn xóa nhân viên ?") == true){
+	    document.getElementById("demo1").innerHTML = 
+                "Xóa thành công";
+		}else{
+		document.getElementById("demo1").innerHTML = "";
+	 }
+};
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+};
+	</script>
+</body>
+
+</html>
