@@ -207,7 +207,7 @@ float: left;
 						<div class="nav navbar-nav">
 							<li><a href="index4.html" style=" color: white;">CSS</a></li>
 							<li class="dropdown">
-  					<button onclick="myFunction()" class="dropbtn" style=" color: chartreuse;">HTML</button>
+  					<button onclick="myFunction()" class="dropbtn" style=" color: white;">HTML</button>
   					<ul id="myDropdown" class="dropdown-content">
     				<a href="index4.html">Wordpress</a>
    					 <a href="index4.html">SEO</a>
@@ -218,7 +218,7 @@ float: left;
 							<li><a href="lienhe.html" style=" color: white;">Liên hệ</a></li>
 						</div>
 						<div class="search-container" style="float: right;">
-    <form action="/action_page.php">
+    <form>
       <input type="search-box" name="search" placeholder="Search">
      <button class="button" type="submit"><i class="fa fa-search"></i></button>
   </form>
@@ -258,7 +258,7 @@ float: left;
   <!-- Main Content -->
   <div class="container">
     <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
+      <div class="leftcolumn">
         <div class="post-preview">
             <h3 class="post-title">
              <font color="red"> 05 Web dev (PHP/Java/Python/NodeJS) </font>
@@ -294,10 +294,10 @@ float: left;
 		<div class="rightcolumn">
     <div class="post-preview">
       <h3>Recent Posts</h3>
-      <div class="post"><a href="chitietbaiviet.html">05 Web dev (PHP/Java/Python/NodeJS)</a></div><br>
+      <div class="post"><a href="chitietbaiviet2.html">05 Web dev (PHP/Java/Python/NodeJS)</a></div><br>
       <div class="post"><a href="chitietbaiviet4.html">Back End Developer (NodeJS, SQL, HTML5)</a></div><br>
-      <div class="post"><a href="chitietbaiviet.html">Front End Developer</a></div><br>
-       <div class="post"><a href="chitietbaiviet4.html">Starting learning HTML</a></div>
+      <div class="post"><a href="#">Front End Developer</a></div><br>
+       <div class="post"><a href="#">Starting learning HTML</a></div>
     </div> <hr><hr>
     <div class="post-preview">
       <h3>Categories</h3>
@@ -308,14 +308,7 @@ float: left;
       	<li><a href="index4.html" style=" color: red;">SEO</a></li>
       	<li><a href="index4.html">Hosting</a></li></ul>
       </div></div> <br><br><hr><br>
-      <div class="post-preview">
-      <h3>Want to be new member?</h3>
-      <div class="post">
-      	<h4>Sign up now</h4>
-      	<p> <a href ="dangky.html">Click here</a></p>
-      </div><br>
-      
-    </div></div>
+      </div>
 	
 </div></div></div></div></div>
 
@@ -378,7 +371,7 @@ function showSlides() {
   slideIndex++;
   if (slideIndex > slides.length) {slideIndex = 1} 
   slides[slideIndex-1].style.display = "block"; 
-  setTimeout(showSlides, 2000);
+  setTimeout(showSlides, 1000);
 }
 
 function checkname(){

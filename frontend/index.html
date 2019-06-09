@@ -209,9 +209,9 @@ float: left;
 							<li class="dropdown">
   					<button onclick="myFunction()" class="dropbtn">HTML</button>
   					<ul id="myDropdown" class="dropdown-content">
-    				<a href="">Wordpress</a>
-   					 <a href="">SEO</a>
-    				<a href="">Hosting</a>
+    				<a href="#">Wordpress</a>
+   					 <a href="#">SEO</a>
+    				<a href="#">Hosting</a>
     				</ul>
   					</li>
 							<li><a href="about.html" style=" color: white;">About us</a></li>
@@ -258,7 +258,7 @@ float: left;
   <!-- Main Content -->
   <div class="container">
     <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
+      <div class="leftcolumn">
         <div class="post-preview">
             <h3 class="post-title">
              <font color="red"> 05 Web dev (PHP/Java/Python/NodeJS) </font>
@@ -283,7 +283,7 @@ float: left;
             	HTML elements are the building blocks of HTML pages. With HTML constructs, images and other objects such as interactive forms may be embedded into the rendered page. HTML provides a means to create structured documents by denoting structural semantics for text such as headings, paragraphs, lists, links, quotes and other items. HTML elements are delineated by tags, written using angle brackets. 
 
             </p>
-            <button class="btn info"><a href="#"> Xem thêm </a></button>
+            <button class="btn info"><a href="chitietbaiviet3.html"> Xem thêm </a></button>
         </div>
         <hr>
 		
@@ -403,7 +403,7 @@ function showSlides() {
   slideIndex++;
   if (slideIndex > slides.length) {slideIndex = 1} 
   slides[slideIndex-1].style.display = "block"; 
-  setTimeout(showSlides, 2000);
+  setTimeout(showSlides, 1000);
 }
 
 function checkname(){
