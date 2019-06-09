@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Đăng kí</title>
+<title>NewsPageHANU</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <style>
@@ -64,14 +64,15 @@ x
 		<dir id="container-login">
 			<dir id="container-login-left">
 				<dir class="header-login">
-					<span>WELCOME TO IT NEWS</span><br/>
+					<span>NewsPageHANU</span><br/>
 				</dir>
 			</dir>
 			
 			<dir id="container-login-right">
 				<dir id="header-login-right">
-					<span  id="dangnhap2">
-						<li><a href="dangnhap.html">Đăng nhập</a></span>/<span class="actived" id="dangky2"><a href="dangky.html">Đăng ký</a></span></li>
+					<span  id="dangnhap2" >
+					<a href="dangnhap.html" >Đăng nhập</a></span>/<span class="actived" id="dangky2">Đăng ký</span>
+				
 				</dir>
 					
 				<dir id="dangky1-signup">
@@ -81,7 +82,7 @@ x
 						<span id="checkusername" style="color: red"></span>
 						<br/>
 						<p style="margin: 0px"><span class="glyphicon glyphicon-phone-alt"></span> Số điện thoại</p>
-						<input id="sdt" name="sdt"class="texinputemail" type="text" onkeypress='return isNumberKey(event);' onblur="checknumber()" placeholder="(+84)"/>
+						<input id="sdt" name="sdt"class="texinputemail" type="text" onkeypress='return isNumberKey(event);' onblur="checknumber()" placeholder="(09)"/>
 						<span id="checkusernumber" style="color: red"></span>
 						<br/>
 						<p style="margin: 0px"><span class="glyphicon glyphicon-envelope"></span> Địa chỉ mail</p>
@@ -96,17 +97,19 @@ x
 						<p style="margin: 0px"><span class="glyphicon glyphicon-lock"></span> Nhập lại mật khẩu</p>
 						<input id="nhaplaimatkhaukt" name="nhaplaimatkhau"class="texinputpass" onblur="checkenterpass()" type="password" placeholder="6-12 kí tự"/><br/>
 						<span id="checkuserpass2" style="color: red"></span>
+						<br/>
 						
-						<input id="btndangky" class="submitinput" type="button" onclick="btndangkythanhvien();" value="Đăng ký"/><br><br>
+						<input id="btndangky" class="submitinput" type="button" onclick="btnchecksignup();" value="Đăng ký"/>
+						<br/><br/>
+					
 						<a href="index.html">Quay về trang chủ</a>
-
-						<span class="submitinput"><a href= “dangnhap.html”></a></span><br/><br/>
+						
 					</form>
 					</dir>
 	
 	</div>
 		</article>
-	<footer>
+	<footer id="footer">
         <div style="background: black;
  right: 0; left: 0;
   bottom: 0;">
@@ -224,14 +227,14 @@ function checkenterpass() {
 	}
 	
 }
-function btndangkythanhvien(){
+function btnchecksignup(){
 var check =0;
 	if (document.getElementById("hoten").value==""){
 		document.getElementById("checkusername").innerHTML=" *tên không dược để trống !";
 		check=1;
 		return;
 	}
-	if(document.getElementById("Sđt").value==""){
+	if(document.getElementById("sdt").value==""){
 		document.getElementById("checkusernumber").innerHTML=" *SĐT không dược để trống !";
 		check=1;
 		return;
@@ -252,14 +255,12 @@ var check =0;
 		 return;
 	}
 	
-			if(check==0){
-			
-				alert("đăng ký thành công");
-				
+			if (check==0){
+				window.open("dangnhap.html");
 			}else{
-				alert("đăng ký thất bại");
+			alert("đăng ký thất bại");
 			}
-};
+	};
 	</script>
 </body>
 

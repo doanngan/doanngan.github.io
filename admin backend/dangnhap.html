@@ -64,7 +64,7 @@
 		<dir id="container-login">
 			<dir id="container-login-left">
 				<dir class="header-login">
-					<span">WELCOME TO IT NEWS</span><br/>
+					<span>NewsPageHANU</span><br/>
 					
 				</dir>
 			</dir >
@@ -100,7 +100,7 @@
 		</dir>
 	</div>
 	</article>
-	<footer>
+	<footer id="footer">
         <div style="background: black;
  right: 0; left: 0;
   bottom: 0;">
@@ -159,18 +159,20 @@ function checkpass() {
 	
 };
 function btnchecklongin(){
+var check=0;
 	if(document.getElementById("email").value==""){
 		 document.getElementById("checkusermail").innerHTML="*email không được để trống !";
+		 check=1
 		 return;
 	}
 	if(document.getElementById("matkhau").value==""){
 		 document.getElementById("checkuserpass").innerHTML="*mật khẩu không được để trống !";
+		 check=1
 		 return;
 	}
-	var user="ngandoan98@gmail.com";
-	var pass="1234567";
-	if(document.getElementById("email").value=="ngandoan98@gmail.com" && document.getElementById("matkhau").value=="1234567"){
-		window.open("quanlydanhmuc.html");
+	
+	if (check==0){
+		window.open("adminprofile.html");
 	}else{
 		alert("đăng nhập thất bại");
 	}

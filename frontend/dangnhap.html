@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Đăng nhập</title>
+<title>NewsPageHANU</title>
  <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 </head>
@@ -64,14 +64,14 @@
 		<dir id="container-login">
 			<dir id="container-login-left">
 				<dir class="header-login">
-					<span">WELCOME TO IT NEWS</span><br/>
+					<span>NewsPageHANU</span><br/>
 					
 				</dir>
 			</dir >
 			<dir id="container-login-right">
 				<dir id="header-login-right">
 					<span  id="dangnhap2">
-						<li><a href="dangky.html">Đăng ký</a></span>/<span class="actived" id="dangky2"><a href="dangnhap.html"> Đăng nhập</span></li>
+						<li><a href="dangky.html">Đăng ký</a></span>/<span class="actived" id="dangky2"><a href="dangnhap.html"> Đăng nhập</a></span></li>
 				</dir>
 				
 					
@@ -158,17 +158,19 @@ function checkpass() {
 	
 };
 function btnchecklongin(){
+var check=0;
 	if(document.getElementById("email").value==""){
 		 document.getElementById("checkusermail").innerHTML="*email không được để trống !";
+		 check=1
 		 return;
 	}
 	if(document.getElementById("matkhau").value==""){
 		 document.getElementById("checkuserpass").innerHTML="*mật khẩu không được để trống !";
+		 check=1
 		 return;
 	}
-	var user="ngandoan98@gmail.com";
-	var pass="1234567";
-	if(document.getElementById("email").value=="ngandoan98@gmail.com" && document.getElementById("matkhau").value=="1234567"){
+	
+	if (check==0){
 		window.open("user profile.html");
 	}else{
 		alert("đăng nhập thất bại");

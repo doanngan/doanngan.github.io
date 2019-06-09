@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Đăng kí</title>
+<title>NewsPageHANU</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <style>
@@ -81,7 +81,7 @@ x
 						<span id="checkusername" style="color: red"></span>
 						<br/>
 						<p style="margin: 0px"><span class="glyphicon glyphicon-phone-alt"></span> Số điện thoại</p>
-						<input id="sdt" name="sdt"class="texinputemail" type="text" onkeypress='return isNumberKey(event);' onblur="checknumber()" placeholder="(+84)"/>
+						<input id="sdt" name="sdt"class="texinputemail" type="text" onkeypress='return isNumberKey(event);' onblur="checknumber()" placeholder="(09)"/>
 						<span id="checkusernumber" style="color: red"></span>
 						<br/>
 						<p style="margin: 0px"><span class="glyphicon glyphicon-envelope"></span> Địa chỉ mail</p>
@@ -230,7 +230,7 @@ var check =0;
 		check=1;
 		return;
 	}
-	if(document.getElementById("Sđt").value==""){
+	if(document.getElementById("sdt").value==""){
 		document.getElementById("checkusernumber").innerHTML=" *SĐT không dược để trống !";
 		check=1;
 		return;
@@ -253,7 +253,7 @@ var check =0;
 	
 			if(check==0){
 			
-				alert("đăng ký thành công");
+				window.open("dangnhap.html");
 				
 			}else{
 				alert("đăng ký thất bại");

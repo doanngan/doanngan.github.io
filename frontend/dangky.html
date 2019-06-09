@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Đăng kí</title>
+<title>NewsPageHANU</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <style>
@@ -64,7 +64,7 @@ x
 		<dir id="container-login">
 			<dir id="container-login-left">
 				<dir class="header-login">
-					<span>WELCOME TO IT NEWS</span><br/>
+					<span>NewsPageHANU</span><br/>
 				</dir>
 			</dir>
 			
@@ -81,7 +81,7 @@ x
 						<span id="checkusername" style="color: red"></span>
 						<br/>
 						<p style="margin: 0px"><span class="glyphicon glyphicon-phone-alt"></span> Số điện thoại</p>
-						<input id="sdt" name="sdt"class="texinputemail" type="text" onkeypress='return isNumberKey(event);' onblur="checknumber()" placeholder="(+84)"/>
+						<input id="sdt" name="sdt"class="texinputemail" type="text" onkeypress='return isNumberKey(event);' onblur="checknumber()" placeholder="(09)"/>
 						<span id="checkusernumber" style="color: red"></span>
 						<br/>
 						<p style="margin: 0px"><span class="glyphicon glyphicon-envelope"></span> Địa chỉ mail</p>
@@ -97,8 +97,8 @@ x
 						<input id="nhaplaimatkhaukt" name="nhaplaimatkhau"class="texinputpass" onblur="checkenterpass()" type="password" placeholder="6-12 kí tự"/><br/>
 						<span id="checkuserpass2" style="color: red"></span>
 						
-						<input id="btndangky" class="submitinput" type="button" onclick="btndangkythanhvien();" value="Đăng ký"/>
-						<span class="submitinput"><a href= “dangnhap.html”></a></span><br/><br/>
+						<input id="btndangky" class="submitinput" type="button" onclick="btndangkythanhvien()" value="Đăng ký"/>
+						<br/><br/>
 							<a href="index.html">Quay về trang chủ</a>
 
 					</form>
@@ -115,8 +115,7 @@ x
 		<ul class="" style="list-style-type: none;">
 			<li style="color: white; margin-top: 15px">THÔNG TIN</li>
 			<li><a style="text-decoration: none; color: darkgray;" href="#">Giới thiệu</a></li>
-			<li><a style="text-decoration: none;color: darkgray;" href="#">Chính sách
-					bảo mật</a></li>
+			<li><a style="text-decoration: none;color: darkgray;" href="#">Chính sách bảo mật</a></li>
 		</ul>
 	</div>
 	<div style="width: 25%; float: right;background: black;">
@@ -190,7 +189,7 @@ function checkemail() {
 	 (dot != -1) && //có ký tự .
 	 (dot > at + 1) && (dot < email.length - 1) //phải có ký tự nằm giữa @ và . cuối cùng
 	 &&
-	 (space == -1)) //không có khoẳng trắng 
+	 (space == -1)) //không có khoảng trắng 
 	 {
 		 document.getElementById("checkusermail").innerHTML="";
 		 /*window.location ="http://localhost:8083/shoplaptop/themthanhvien/guimail";*/
@@ -227,12 +226,12 @@ function checkenterpass() {
 function btndangkythanhvien(){
 var check =0;
 	if (document.getElementById("hoten").value==""){
-		document.getElementById("checkusername").innerHTML=" *tên không dược để trống !";
+		document.getElementById("checkusername").innerHTML=" *tên không được để trống !";
 		check=1;
 		return;
 	}
-	if(document.getElementById("Sđt").value==""){
-		document.getElementById("checkusernumber").innerHTML=" *SĐT không dược để trống !";
+	if(document.getElementById("sdt").value==""){
+		document.getElementById("checkusernumber").innerHTML=" *SĐT không được để trống !";
 		check=1;
 		return;
 	}
@@ -254,7 +253,7 @@ var check =0;
 	
 			if(check==0){
 			
-				alert("đăng ký thành công");
+				window.open("dangnhap.html");
 				
 			}else{
 				alert("đăng ký thất bại");
