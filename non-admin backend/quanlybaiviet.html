@@ -55,6 +55,13 @@
   .modal-footer {
     background-color: #f9f9f9;
   }
+  #right ul{
+list-style-type: none;
+  }
+  .sortbaiviet li{
+  float: left;
+  padding-right: 5em;
+  }
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Website New Page Hanu</title>
@@ -134,29 +141,25 @@
     </div>
     <div id="right">
 	
-		<form action="" method="post">
-		<table style = "width 100%">
-		<tr>
-						<th><label for="quanlinguoidang" style="width: 150%;"> <i class="glyphicon glyphicon-bookmark"></i>Quản lý bài viết được đăng bởi</label>
+		<ul class="sortbaiviet">
+						<li><label for="quanlinguoidang" style="width: 150%;"> <i class="glyphicon glyphicon-bookmark"></i>Quản lý bài viết được đăng bởi</label>
 					    <select style="width: 90%;" name="quanlinguoidang" class="form-control" id="danhmuc">
 					    	<option  value="1">Admin nội dung</option>
 					 		<option  value="2">Admin kĩ thuật</option>
-					    </select><br/></th>	
+					    </select><br/></li>	
 					    
-					    <th><label for="pheduyet" style="width: 200%;"> <i class="glyphicon glyphicon-bookmark"></i>Trạng thái bài viết</label>
+					    <li><label for="pheduyet" style="width: 250%;"> <i class="glyphicon glyphicon-bookmark"></i>Trạng thái bài viết</label>
 					    <select style="width: 100%;" name="pheduyet" class="form-control" id="pheduyet">
 					    	<option  value="1">bài viết đang hiện</option>
 					 		<option  value="2">bài viết đang ẩn</option>
-					    </select><br/></th>
+					    </select><br/><br/></li>
 
-						<th><label for="danhmuc" style="width: 200%;"> <i class="glyphicon glyphicon-bookmark"></i>Danh mục</label>
+						<li><label for="danhmuc" style="width: 300%;"> <i class="glyphicon glyphicon-bookmark"></i>Danh mục</label>
 					    <select style="width: 150%;" name="danhmuc" class="form-control" id="danhmuc">
 					    	 <option  value="1">HTML</option>
 					 		<option  value="2">CSS</option>
-					    </select><br/></th>
-						</tr>
-						</table>
-		</form>
+					    </select><br/></li>
+		</ul>
 		
     	<table class="table table-striped fixed" id="tablethem-baiviet" >
 				<thead>
