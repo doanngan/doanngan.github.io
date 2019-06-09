@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<style>
+	body, html{
+margin: 0; 
+ padding: 0; 
+ font-family: 'Helvetica', 'Arial'; /* fonts */
+ background-image: url("images/bgweb.jpg");
+ background-attachment: fixed;
+ background-position: right top;
+ width: 100%;
+ height: auto;
+}
+#header{
+	width: 95%;
+	margin-top: 10px;
+	margin-left: 25px;
+}
+input[type="search-box"] {
+      width: 300px;
+      box-sizing: border-box;
+      border: 1px solid gray;
+      border-radius: 4px;
+      outline:none;
+      padding: 5px 10px;
+      margin: 8px;
+    }
+.button{
+	font-size:10px;
+	padding: 6px;
+	border-radius: 5px;
+	border: #4296F7;
+}
+.dropbtn {
+  background-color: #4296F7;
+  color: white;
+  padding: 10px;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  margin-top: 5px;
+}
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #4296F7;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color:white;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: #4296F7;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown a:hover {background-color: #ddd;}
+.show {display: block;}
+ul.login-logout a{
+	text-decoration:none;
+	color: white;
+	border: none;
+    margin: 10px; 
+    padding: 0;
+    float: right; 
+}
+.container {
+    width: 80%;
+    margin: auto;
+    border-radius: 5px;
+    background-color: white;
+    padding: 20px;
+}
+    input[type=text] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+ 
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+ 
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+.text{
+  margin: 25px;
+  padding: auto;
+
+}
+img{
+  border-radius: 8px;
+}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>NewsPageHANU</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	  
+</head>
+<body>
+	<input id="sizeall" type="hidden" value="${sizeall }">
+	<div id="header" class="border-top border-secondary">
+		<div>
+			<nav class="navbar navbar-default"
+				style="padding: 0px; margin: 0px; background: #4296F7">
+				<div class="container-fluid" style="margin-left: 10%">
+					<div class="navbar-header">
+						<a class="navbar-brand" href="index.html" style=" color: white;">NewsPageHANU</a>
+					</div>
+						<div class="nav navbar-nav">
+							<li><a href="#" style=" color: white;">CSS</a></li>
+							<li class="dropdown">
+  					<button onclick="myFunction()" class="dropbtn">HTML</button>
+  					<ul id="myDropdown" class="dropdown-content">
+    				<a href="">Wordpress</a>
+   					 <a href="">SEO</a>
+    				<a href="">Hosting</a>
+    				</ul>
+  					</li>
+							<li><a href="about.html" style=" color: white;">About us</a></li>
+							<li><a href="lienhe.html" style=" color: chartreuse;">Liên hệ</a></li>
+						</div>
+						<div class="search-container" style="float: right;">
+    <form action="/action_page.php">
+      <input type="search-box" name="search" placeholder="Search">
+     <button class="button" type="submit"><i class="fa fa-search"></i></button>
+  </form>
+  <ul class="login-logout">
+  	<a href="dangnhap.html" style="color: white;">Đăng nhập</a>
+  	     <a href="dangky.html" style="color: white;">Đăng ký</a>
+  </ul>
+</div>
+  </nav>
+  <br>
+  <div class= "content">
+    <div class="text">
+      <h1> Liên hệ </h1><br>
+      <p>Mọi thông tin bổ sung, góp ý cho website vui lòng liên hệ ....</p>
+      <img alt="" src="https://hinhanhykhoa.com/wp-content/uploads/2017/06/contact-us.png" />
+      <h3>Form liên hệ</h3>
+    </div>
+    <div class="container">
+     <form>
+        <label for="fname">Họ Và Tên</label>
+        <input type="text" id="name" name="name" placeholder="Họ và tên...">
+ 
+        <label for="lname">Email</label>
+        <input type="text" id="email" name="email" placeholder="Email...">
+ 
+        <label for="country">Số Điện Thoại</label>
+        <input type="text" id="phone" name="phone" placeholder="Số điện thoại...">
+ 
+        <label for="address">Địa Chỉ</label>
+        <input type="text" id="address" name="address" placeholder="Địa chỉ...">
+ 
+        <button type="submit" class="btn btn-info btn-fill pull-right">Submit</button>
+        <div class="clearfix"></div>
+    </form>
+</div>
+<br />
+
+  
+</div>
+
+
+<footer>
+    <div style="background: black;
+ right: 0; left: 0;
+  bottom: 0;">
+    <div style="width: 25%; float:left;background: black;">
+    
+    <ul class="" style="list-style-type: none;">
+      <li style="color: white; margin-top: 15px">THÔNG TIN</li>
+      <li><a style="text-decoration: none; color: darkgray;" href="#">Giới thiệu</a></li>
+      <li><a style="text-decoration: none;color: darkgray;" href="#">Chính sách
+          bảo mật</a></li>
+    </ul>
+  </div>
+  <div style="width: 25%; float: right;background: black;">
+    <ul class="" style="list-style-type: none;">
+      <li style="color: white; margin-top: 15px">LIÊN KẾT</li>
+      <li><a style="text-decoration: none; color: darkgray;" href="#">FB: </a></li>
+      <li><a style="text-decoration: none; color: darkgray;" href="#">Email:</a></li>
+    </ul>
+  </div>
+  <div style="width: 25%; float: right;background: black;">
+    <ul class="" style="list-style-type: none;">
+      <li style="color: white;margin-top: 15px ">ĐỊA CHỈ</li>
+      <li><a style="text-decoration: none;color: darkgray;" href="#">Địa chỉ1: Hà Nội </a></li>
+      <li><a style="text-decoration: none;color: darkgray;" href="#">Địa chỉ2: Vĩnh Phúc </a></li>
+    </ul>
+  </div>
+  <div style="width: 25%; float: right;background: black;">
+    <ul class="" style="list-style-type: none;">
+    <li style="color: white; margin-top: 15px ;">LIÊN HỆ</li>
+      <li><a style="text-decoration: none;color: darkgray;" href="#"><span class="glyphicon glyphicon-earphone"></span> 0352428800</a></li>
+      <li><a style="text-decoration: none;color: darkgray;" href="#"> <span class="glyphicon glyphicon-envelope"></span> doanngan2108@gmail.com</a></li>
+    </ul>
+  </div>
+</div>
+  </footer>
+
+
+
+  <script type="text/javascript">
+    function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+};
+  </script>
+  

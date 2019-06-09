@@ -80,12 +80,15 @@ ul.login-logout a{
     padding: 0;
     float: right; 
 }
-.info{
-	border: none;
-	background:#2196F3;
-	}
-.info:hover{
-	background: #0b7dda;
+.post-preview{
+	border: solid 1px;
+	border-color: lightblue;
+	padding: 2%;
+}
+.center{
+	display:block;
+	margin-left:auto;
+	margin-right: auto;
 }
 .pagination {
   display: inline-block;
@@ -108,83 +111,6 @@ ul.login-logout a{
   background-color: #ddd;
   border-radius: 5px;
 }
-* {box-sizing: border-box}
-body {font-family: Verdana, sans-serif; margin:0}
-.mySlides {display: none}
-img {vertical-align: middle;}
-
-/* Slideshow container */
-.slideshow-container {
-  max-width: 100%;
-  max-height: 500px;
-  position: relative;
-  margin: auto;
-}
-
-/* Caption text */
-.text {
-  color: #000000;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-}
-
-/* Fading animation */
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-@keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-.post-preview img{
-float: left;
-}
-/* Left column */
-.leftcolumn { 
-  float: left;
-  width: 70%;
-}
-.leftcolumn .post-preview{
-	border: solid 1px;
-	border-color: lightblue;
-	padding: 35px;
-}
-/* Right column */
-.rightcolumn {
-  float: left;
-  width: 30%;
-  padding-left: 20px ;
-}
-.rightcolumn .post-preview {
-    border: solid 1px;
-	border-color: lightblue;
-	padding: 35px;
-}
-
-/* Clear floats after the columns */
-.row {
-  clear: both;
-}
-@media screen and (max-width: 800px) {
-  .leftcolumn, .rightcolumn { 
-    width: 100%;
-    padding: 0;
-  }
-}
-
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>NewsPageHANU</title>
@@ -201,17 +127,17 @@ float: left;
 				style="padding: 0px; margin: 0px; background: #4296F7">
 				<div class="container-fluid" style="margin-left: 10%">
 					<div class="navbar-header">
-						<a class="navbar-brand" href="#" style=" color: chartreuse;"
+						<a class="navbar-brand" href="index.html" style=" color: white;"
 						>NewsPageHANU</a>
 					</div>
 						<div class="nav navbar-nav">
-							<li><a href="#" style=" color: white;">CSS</a></li>
+							<li><a href="index3.html" style=" color: white;">CSS</a></li>
 							<li class="dropdown">
   					<button onclick="myFunction()" class="dropbtn">HTML</button>
   					<ul id="myDropdown" class="dropdown-content">
-    				<a href="">Wordpress</a>
-   					 <a href="">SEO</a>
-    				<a href="">Hosting</a>
+    				<a href="index3.html">Wordpress</a>
+   					 <a href="index3.html">SEO</a>
+    				<a href="index3.html">Hosting</a>
     				</ul>
   					</li>
 							<li><a href="about.html" style=" color: white;">About us</a></li>
@@ -223,136 +149,61 @@ float: left;
      <button class="button" type="submit"><i class="fa fa-search"></i></button>
   </form>
   <ul class="login-logout">
-  	<a href="dangnhap.html" title="">Đăng nhập</a>
-  	     <a href="dangky.html" title="">Đăng ký</a>
+     <a href="dangnhap.html" title="">Đăng nhập</a>
+  	<a href="dangky.html" tiltle="">Đăng ký</a>
   </ul>
 </div>
   </nav>
-<br>
-  <div class="slideshow-container">
+  <br>
+  <div id="masthead">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>IT Jobs</h1>
+            <span class="subheading"> A website for finding IT jobs</span>
+            
+          </div>
 
-<div class="mySlides fade">
-  <img src="images/a4.jpg" style="width:100%;height:500px;">
-  <div class="text">
-  <h2 >IT Blogs - A blogs for finding IT infomation</h2>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
-
-<div class="mySlides fade">
-  <img src="images/a5.jpg" style="width:100%;height:500px;">
-  <div class="text">
-    <h2>More than 1000 IT informations for Developers</h2>
-  </div>
-</div>
-
-<div class="mySlides fade">
-  <img src="images/a7.png" style="width:100%;height:500px;">
-  <div class="text">
-    <h2>Thousand amazing things waiting for you!</h2>
-  </div>
-</div>
-
-</div>
-<h1 style="text-align: center;"><font color="ForestGreen">Hightlight Posts</font></h1>
-<br>
   <!-- Main Content -->
   <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
         <div class="post-preview">
-            <h3 class="post-title">
-             <font color="red"> 05 Web dev (PHP/Java/Python/NodeJS) </font>
-            </h3>
-            
-          <p class="post-meta">Posted by Doan Ngan on June 1, 2019</p>
-            <p><img src="images/html.png" style="width:150px;height:150px;margin-right:15px;">
-            	HTML elements are the building blocks of HTML pages. With HTML constructs, images and other objects such as interactive forms may be embedded into the rendered page. HTML provides a means to create structured documents by denoting structural semantics for text such as headings, paragraphs, lists, links, quotes and other items. HTML elements are delineated by tags, written using angle brackets. 
+            <h2 class="post-title" style="text-align:center;"> <font color="red">Back End Developer (NodeJS, SQL, HTML5)</font> </h2>
+         
+        
+          <p class="post-meta" style="text-align:right;">Posted by Start Bootstrap on May 18, 2019</p>
+        
+       <p>
+       	Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language like HTML. CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript. <br><br>
 
-            </p>
-            <button class="btn info"><a href="chitietbaiviet1.html">Xem thêm</a></button>
-        </div>
-        <hr>
-		
-        <div class="post-preview">
-            <h3 class="post-title">
-             <font color="red"> Back End Developer (NodeJS, SQL, HTML5) </font>
-            </h3>
-          
-          <p class="post-meta">Posted by Start Bootstrap on May 18, 2019</p>
-            <p><img src="images/a4.jpg" style="width:150px;height:150px;margin-right:15px;">
-            	HTML elements are the building blocks of HTML pages. With HTML constructs, images and other objects such as interactive forms may be embedded into the rendered page. HTML provides a means to create structured documents by denoting structural semantics for text such as headings, paragraphs, lists, links, quotes and other items. HTML elements are delineated by tags, written using angle brackets. 
+CSS is designed to enable the separation of presentation and content, including layout, colors, and fonts. This separation can improve content accessibility, provide more flexibility and control in the specification of presentation characteristics, enable multiple web pages to share formatting by specifying the relevant CSS in a separate .css file, and reduce complexity and repetition in the structural content.<br><br>
 
-            </p>
-            <button class="btn info"><a href="#"> Xem thêm </a></button>
-        </div>
-        <hr>
-		
-        <div class="post-preview">
-            <h3 class="post-title">
-             <font color="red"> Front End Developer </font>
-            </h3>
+Separation of formatting and content also makes it feasible to present the same markup page in different styles for different rendering methods, such as on-screen, in print, by voice (via speech-based browser or screen reader), and on Braille-based tactile devices. CSS also has rules for alternate formatting if the content is accessed on a mobile device.<br><br>
 
-          <p class="post-meta">Posted by Start Bootstrap on August 24, 2019</p>
-            <p><img src="images/a5.jpg" style="width:150px;height:150px;margin-right:15px;">
-            	HTML elements are the building blocks of HTML pages. With HTML constructs, images and other objects such as interactive forms may be embedded into the rendered page. HTML provides a means to create structured documents by denoting structural semantics for text such as headings, paragraphs, lists, links, quotes and other items. HTML elements are delineated by tags, written using angle brackets. 
 
-            </p>
-            <button class="btn info"><a href="#"> Xem thêm </a></button>
-        </div>
-        <hr>
-		
-		<div class="post-preview">
-            <h3 class="post-title">
-             <font color="red"> Starter </font>
-            </h3>
+<img src="images/css.png" style="width:500px;height:400px;" class="center"><br><br>
+The name cascading comes from the specified priority scheme to determine which style rule applies if more than one rule matches a particular element. This cascading priority scheme is predictable.<br><br>
 
-          <p class="post-meta">Posted by Start Bootstrap on August 24, 2019</p>
-            <p><img src="images/a6.jpg" style="width:150px;height:150px;margin-right:15px;">
-            	HTML elements are the building blocks of HTML pages. With HTML constructs, images and other objects such as interactive forms may be embedded into the rendered page. HTML provides a means to create structured documents by denoting structural semantics for text such as headings, paragraphs, lists, links, quotes and other items. HTML elements are delineated by tags, written using angle brackets. 
-
-            </p>
-            <button class="btn info"><a href="#"> Xem thêm </a></button>
-        </div>
-        <hr>
+In addition to HTML, other markup languages support the use of CSS including XHTML, plain XML, SVG, and XUL.<br><br>
+       </p>
+       </div>
 				</div>
-				
-		<div class="rightcolumn">
-    <div class="post-preview">
-      <h3>Popular Post</h3>
-      <div class="post"><a href="chitietbaiviet.html">05 Web dev (PHP/Java/Python/NodeJS)</a></div><br>
-      <div class="post"><a href="chitietbaiviet.html">Back End Developer (NodeJS, SQL, HTML5)</a></div><br>
-      <div class="post"><a href="chitietbaiviet.html">Front End Developer</a></div><br>
-       <div class="post"><a href="chitietbaiviet.html">Starting learning HTML</a></div>
-    </div> <hr><hr>
-    <div class="post-preview">
-      <h3>Categories</h3>
-      <div class="post"><a href="index.html">CSS</a></div>
-      <div class="post">HTML
-      	<ul>
-      	<li><a href="index.html">Wordpress</a></li>
-      	<li><a href="index.html">SEO</a></li>
-      	<li><a href="index.html">Hosting</a></li></ul>
-      </div></div> <br><br><hr><br>
-      <div class="post-preview">
-      <h3>Want to be new member?</h3>
-      <div class="post">
-      	<h4>Sign up now</h4>
-      	<p> <a href ="dangky.html">Click here</a></p>
-      </div><br>
-      
-    </div></div>
-	
-</div></div></div></div></div>
-
-</div>
+			</nav>
+		</div>
 	</div><br>
 	<br>
 	<div class="pagination">
-		<a href="index.html">&laquo;</a>
-		<a href="index.html" class="active">1</a>
-		<a href="index.html" >2</a>
-		<a href="index.html">&raquo;</a>
+		<a href="chitietbaiviet1.html">&laquo;</a>
+		<a href="chitietbaiviet1.html" >1</a>
+		<a href="chitietbaiviet3.html" class="active">2</a>
+		<a href="chitietbaiviet3.html">&raquo;</a>
 	</div>
+	<div class="clearfix"> </div>
     <footer>
 		<div style="background: black;
  right: 0; left: 0;
@@ -391,20 +242,6 @@ float: left;
 	</footer>
 	
 <script type="text/javascript">
-var slideIndex = 0;
-showSlides();
-
-function showSlides() {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none"; 
-  }
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1} 
-  slides[slideIndex-1].style.display = "block"; 
-  setTimeout(showSlides, 2000);
-}
 
 function checkname(){
 	if(document.getElementById("hoten").value!=""){
