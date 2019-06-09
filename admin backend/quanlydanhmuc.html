@@ -113,13 +113,10 @@
 			<span id="checkngaysuadanhmuc" style="color: red"></span>
 			<br/>
 							
-			<label for="soluong"><i class="glyphicon glyphicon-pushpin"></i> Số lượng bài viết </label>
-			<input id="soluongbaiviet" name="soluong" class="form-control" type="text" onkeypress='return isNumberKey(event);' onblur="checksoluongbaiviet()" placeholder="số lượng"/>
-			<span id="checksoluong" style="color: red"></span>
-			<br/>
+			
 			
 			<input id="btnthem" class="submitinput" type="button" onclick="btnthemdanhmuc();" value="Thêm"/><br/><br/>
-						
+				<br/><br/><br/><br/><br/><br/><br/>		
 			</form>			
     </div>
 	
@@ -131,7 +128,7 @@
 					<th style="text-align: center;">Tên Danh Mục</th>
 					<th style="text-align: center;">Ngày tạo</th>
 					<th style="text-align: center;">Ngày sửa</th>
-					<th style="text-align: center;">Số lượng bài viết</th>
+					
 					<th style="text-align: center;" colspan="2">Tác vụ</th>
 				</tr>
 			</thead>
@@ -146,7 +143,7 @@
 						
 					<td style="text-align: center;"><span id="ngaysua">01/06/2019</span></td>
 						
-					<td style="text-align: center;"><span id="soluongbaiviet">1</span></td>
+					
 						
 					<td style="text-align: center;">
 					<button type="button" class="btn btn-warning" id="myBtn" >Sửa</button>
@@ -166,7 +163,7 @@
 						
 					<td style="text-align: center;"><span id="ngaysua">01/06/2019</span></td>
 						
-					<td style="text-align: center;"><span id="soluongbaiviet">1</span></td>
+					
 						
 					<td style="text-align: center;"><button type="button" class="btn btn-warning" id="myBtn1" >Sửa</button></td>
 					
@@ -187,7 +184,7 @@
     <footer  id="footer">
         <div style="background: black;
  right: 0; left: 0;
-  bottom: 0;">
+  bottom: 0; position: fixed"></div>
         <div style="width: 25%; float:left;background: black;">
         
         <ul class="" style="list-style-type: none;">
@@ -250,10 +247,7 @@
               <label for="ns"><span class="glyphicon glyphicon-eye-open"></span> Ngày sửa</label>
               <input type="text" class="form-control" id="ns" placeholder="Ngày sửa">
             </div>
-			<div class="form-group">
-              <label for="slbv"><span class="glyphicon glyphicon-eye-open"></span> Số lượng bài viết</label>
-              <input type="text" class="form-control" id="slbv" placeholder="Số lượng bài viết">
-            </div>
+			
               <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Sửa </button>
           </form>
         </div>
