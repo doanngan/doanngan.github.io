@@ -96,24 +96,27 @@
 			<label><i class="glyphicon glyphicon-user"></i> Họ và tên</label>
 			<input id="hoten" name="hoten"class="texinputemail" type="text" onblur="checkname()" placeholder="full name"/>
 			<span id="checkusername" style="color: red"></span>
-			<br/>
+			<br/><br/>
+			
 			<label><i class="glyphicon glyphicon-phone-alt"></i> Số điện thoại</label>
 			<input id="sdt" name="sdt"class="texinputemail" type="text" onkeypress='return isNumberKey(event);' onblur="checknumber()" placeholder="number"/>
 						<span id="checkusernumber" style="color: red"></span>
-						<br/>
+						<br/><br/>
+						
 						<label><i class="glyphicon glyphicon-envelope"></i> Địa chỉ mail</label>
 						<input id="emaildk" name="email"class="texinputemail" onblur="checkemail()" type="text" placeholder="Email"/>
 						<span id="checkusermail" style="color: red"></span>
-						<br/>
+						<br/><br/>
+						
 						<label><i class="glyphicon glyphicon-lock"></i> Mật khẩu</label>
 						<input id="matkhaukt" name="matkhau" onblur="checkpass()" class="texinputpass" type="password" placeholder="Password"/>
 						<span id="checkuserpass" style="color: red"></span>
-						<br/>
+						<br/><br/>
 						
 						<label><i class="glyphicon glyphicon-lock"></i> Nhập lại mật khẩu</label>
 						<input id="nhaplaimatkhaukt" name="nhaplaimatkhau"class="texinputpass" onblur="checkenterpass()" type="password" placeholder="Enter password again"/><br/>
 						<span id="checkuserpass2" style="color: red"></span>
-							<br/>
+							<br/><br/>
 							
 						<p style="margin: 15px"><label><i class="glyphicon glyphicon-cog"></i> Phân Quyền</label><br>
 						<select id="phanquyen" name="phanquyen">
@@ -121,8 +124,9 @@
 						  <option value="2">Admin kĩ thuật</option>
 						</select>
 						<br/>
-							<br/>
+							<br/><br/>
 						<input id="btndangky" class="submitinput" type="button" onclick="btndangkythanhvien();" value="Đăng ký"/><br/><br/>
+						<br/><br/><br/><br/><br/>
 						
 						</div>
 						
@@ -193,39 +197,6 @@
 				<a href="#">&raquo;</a>
 			</div>
     </div>
-    <footer id "footer" >
-		<div style="background: black;">
-		<div style="width: 25%; float:left;background: black;">
-		
-		<ul class="" style="list-style-type: none;text-align: center;">
-			<li style="color: white; margin-top: 15px">THÔNG TIN</li>
-			<li><a style="text-decoration: none; color: darkgray;" href="#">Giới thiệu</a></li>
-			<li><a style="text-decoration: none;color: darkgray;" href="#">Chính sách bảo mật</a></li>
-		</ul>
-	</div>
-	<div style="width: 25%; float: right;background: black;">
-		<ul class="" style="list-style-type: none;">
-			<li style="color: white; margin-top: 15px">LIÊN KẾT</li>
-			<li><a style="text-decoration: none; color: darkgray;" href="#">FB: </a></li>
-			<li><a style="text-decoration: none; color: darkgray;" href="#">Email:  </a></li>
-		</ul>
-	</div>
-	<div style="width: 25%; float: right;background: black;">
-		<ul class="" style="list-style-type: none;text-align: center;">
-			<li style="color: white;margin-top: 15px ">ĐỊA CHỈ</li>
-			<li><a style="text-decoration: none;color: darkgray;" href="#">Địa chỉ1: Hà Nội </a></li>
-			<li><a style="text-decoration: none;color: darkgray;" href="#">Địa chỉ2: Bắc Giang </a></li>
-		</ul>
-	</div>
-	<div style="width: 25%; float: right;background: black;">
-		<ul class="" style="list-style-type: none;">
-		<li style="color: white; margin-top: 15px ;">LIÊN HỆ</li>
-			<li><a style="text-decoration: none;color: darkgray;" href="#"><span class="glyphicon glyphicon-earphone"></span> 0352428800</a></li>
-			<li><a style="text-decoration: none;color: darkgray;" href="#"> <span class="glyphicon glyphicon-envelope"></span> doanngan2108@gmail.com</a></li>
-		</ul>
-	</div>
-</div>
-	</footer>
 	
 	<div class="container">
   <!-- Modal -->
